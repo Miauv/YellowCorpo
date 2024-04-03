@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="PL-pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Yellow, Internet, Abonament">
+    <title>Yellow.corp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="top">
+        <img id="logopng" src="yellow.png" alt="logo">
+        <a href="help.html">POMOC</a>
+        <a href="contact.html">KONTAKT</a>
+        <a href="offer.html">OFERTA</a>
+        <a href="shop.html">SKLEP</a>
+        <a href="login.html" class="split">PANEL UŻYTKOWNIKA</a>
+        <div class="split" id="search">
+            <form action="index.html">
+            <input type="text" placeholder="Wyszukaj..." name="search">
+            <button type="submit">O</button>
+            </form>
+        </div>
+    </header>
+
+    <main id="mid">
+
+        <nav id="panel">
+            <a href="" class="panelel">Przedłużenie abonamentu</a>
+            <a href="" class="panelel">Zmiana numeru</a>
+            <a href="" class="panelel">Przeniesienie numeru</a>
+            <a href="" class="panelel">Zmiana pakietu internetu</a>
+            <a href="" class="panelel">Limitowana oferta Yellow</a>
+        </nav>
+
+        <section class="news">
+
+            <div class="neNews zmaz">
+                <div class="numtext">1 / 4</div>
+                <img src="yellow.png" style="width:100%">
+                <div class="textt">News 1</div>
+            </div>
+
+            <div class="neNews zmaz">
+                <div class="numtext">2 / 4</div>
+                <img src="yellow.png" style="width:100%">
+                <div class="textt">News 2</div>
+            </div>
+
+            <div class="neNews zmaz">
+                <div class="numtext">3 / 4</div>
+                <img src="yellow.png" style="width:100%">
+                <div class="textt">News 3</div>
+            </div>
+
+            <div class="neNews zmaz">
+                <div class="numtext">4 / 4</div>
+                <img src="yellow.png" style="width:100%">
+                <div class="textt">News 4</div>
+            </div>
+
+        </section>
+
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span>
+            <span class="dot"></span> 
+        </div>
+
+        <script>
+        let NewsNum = 0;
+        showNews();
+
+        function showNews() {
+         let i;
+         let news = document.getElementsByClassName("neNews");
+         let dots = document.getElementsByClassName("dot");
+         for (i = 0; i < news.length; i++) {
+            news[i].style.display = "none";  
+         }
+         NewsNum++;
+         if (NewsNum > news.length) {NewsNum = 1}    
+         for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" active", "");
+         }
+         news[NewsNum-1].style.display = "block";  
+         dots[NewsNum-1].className += " active";
+         setTimeout(showNews, 5000);
+        }
+        </script>
+
+        <br>
+
+        <section id="inf">
+            <article class="acl">a</article>
+            <article class="acl">a</article>
+            <article class="acl">s</article>
+            <article class="acl">d</article>
+            <article class="acl">f</article>
+        </section>
+    </main>
+
+    <footer id="bot">
+        <div>PASEK INFORMACYJNY</div>
+    </footer>
+
+</body>
+</html>
